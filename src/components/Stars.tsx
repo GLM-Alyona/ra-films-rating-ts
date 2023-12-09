@@ -1,12 +1,9 @@
 import Star from './Star';
-import PropTypes from 'prop-types';
+import { IStars } from "../models"
 
-export default function Stars(props: any) {
+export default function Stars(props: IStars) {
+    console.log(props)
     const { count } = props;
-
-    if (count < 1 || count > 5 || count === Number) {
-        return null
-    }
 
     const starsArr = Array.from({ length: count }, (v, k) => k+1)
 
@@ -18,10 +15,3 @@ export default function Stars(props: any) {
         </ul>
     )
 }
-
-Stars.defaultProps = {
-    count: 0
-    };
-Stars.propTypes = {
-    count: PropTypes.number
-    };
